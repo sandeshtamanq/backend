@@ -1,14 +1,16 @@
-##Nodejs template
+## Nodejs template
+
 This is a templare made using express, typeorm and typescript. In this template i have implemented a validation pipe and authmiddleware.
 
-##Installation
+## Installation
 
 ```
 git clone
 yarn
 ```
 
-##Usage
+## Usage
+
 I have already made an endpoint which uses the validation pipe and auth middleware.
 
 ```
