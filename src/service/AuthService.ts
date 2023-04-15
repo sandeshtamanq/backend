@@ -81,7 +81,7 @@ export class AuthService {
 
     const accessToken: string = jwt.sign(
       {
-        user: result,
+        ...result,
       },
       process.env.JWT_SECRET_KEY!,
       { expiresIn: "1h" }

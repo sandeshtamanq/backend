@@ -12,9 +12,9 @@ export class UserService {
    * @returns lists of registered users
    */
   async getUsers(req: Request, res: Response) {
-    const userList = await this.userRepository.find();
+    const userList: UserEntity[] = await this.userRepository.find();
     return res.status(200).json({
-      user: userList,
+      users: userList,
     });
   }
 
