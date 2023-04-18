@@ -6,3 +6,5 @@ src/routes/user
 src/service/UserService
 
 .env
+
+dist
