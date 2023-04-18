@@ -9,7 +9,7 @@ export const ormConfig: PostgresConnectionOptions = {
   // port: Number(process.env.DB_PORT),
   // database: process.env.DB_DATABASE_NAME,
   url: process.env.DB_URL,
-  entities: [join(__dirname, "**", "entites/*.{ts,js}")],
+  entities: [__dirname + "/models/entites/*.{ts,js}"],
   logging: false,
   synchronize: true,
 };
