@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginDto = void 0;
 const validationPipe_1 = require("../../pipes/validationPipe");
 class LoginDto {
+    email;
+    password;
 }
 __decorate([
     (0, validationPipe_1.IsEmail)(),

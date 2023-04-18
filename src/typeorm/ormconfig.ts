@@ -1,4 +1,5 @@
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
+import { join } from "path";
 require("dotenv").config();
 export const ormConfig: PostgresConnectionOptions = {
   type: "postgres",
@@ -8,7 +9,7 @@ export const ormConfig: PostgresConnectionOptions = {
   // port: Number(process.env.DB_PORT),
   // database: process.env.DB_DATABASE_NAME,
   url: process.env.DB_URL,
-  entities: ["src/models/entities/*.ts"],
+  entities: [join(__dirname, "**", "*.entity.{ts,js}")],
   logging: false,
   synchronize: true,
 };

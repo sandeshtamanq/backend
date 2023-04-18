@@ -12,6 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegisterDto = void 0;
 const validationPipe_1 = require("../../pipes/validationPipe");
 class RegisterDto {
+    firstName;
+    lastName;
+    email;
+    password;
 }
 __decorate([
     (0, validationPipe_1.IsString)(),

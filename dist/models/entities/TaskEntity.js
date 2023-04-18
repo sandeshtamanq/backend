@@ -14,6 +14,13 @@ const typeorm_1 = require("typeorm");
 const UserEntity_1 = require("./UserEntity");
 const taskStatus_1 = require("../interface/taskStatus");
 let TaskEntity = class TaskEntity {
+    id;
+    taskName;
+    description;
+    status;
+    userId;
+    user;
+    createdAt;
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),

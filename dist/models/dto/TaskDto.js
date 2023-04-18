@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskDto = void 0;
 const validationPipe_1 = require("../../pipes/validationPipe");
 class TaskDto {
+    title;
+    description;
 }
 __decorate([
     (0, validationPipe_1.IsNotEmpty)(),
