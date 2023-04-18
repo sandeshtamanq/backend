@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { TaskEntity } from "./TaskEntity";
+import { userRoles } from "../interface/userRoles";
 
 @Entity({ name: "users" })
 export class UserEntity {
@@ -16,4 +18,10 @@ export class UserEntity {
 
   @Column({ select: false })
   password: string;
+
+  @Column({ default: userRoles.USER })
+  role: userRoles;
+
+  @OneToMany((type) => TaskEntity, (task) => task.user)
+  task: TaskEntity[];
 }

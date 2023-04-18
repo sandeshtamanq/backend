@@ -29,6 +29,7 @@ export class AuthService {
   }
 
   /**
+   * @method post
    * @description user registration function
    * @param req
    * @param res
@@ -63,6 +64,7 @@ export class AuthService {
   }
 
   /**
+   * @method post
    * @description user login function
    * @param req
    * @param res
@@ -70,7 +72,7 @@ export class AuthService {
    */
   async login(req: Request, res: Response) {
     const loginDto: LoginDto = req.body;
-    const user: UserEntity | null = await this.userRepository.findOne({ where: { email: loginDto.email } });
+    const user: UserEntity | null = await this.userRepository.findOne({ where: { email: loginDto.email }, select: ["id", "firstName", "lastName", "email", "password", "role"] });
     if (!user || !(await this.comparePassword(loginDto.password, user.password)))
       return res.status(403).json({
         status: 403,
