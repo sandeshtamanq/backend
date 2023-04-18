@@ -12,4 +12,5 @@ FROM  base as production
 
 RUN  yarn build
 
+
 CMD [ "yarn", "start" ]
